@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import axios from "../axios";
+import axios from "../utils/axios";
 import requests from "../utils/firestore";
-import "../Banner.css"
+import "../styles/Banner.css"
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Banner({ fetchUrl }) {
   const [movie, setMovie] = useState([]);
 
+  
   useEffect(() => {
     async function fetchData() {
       const { data: request } = await axios.get(requests.fetchNetflixOriginals);
